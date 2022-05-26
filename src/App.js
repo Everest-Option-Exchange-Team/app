@@ -21,6 +21,7 @@ function App() {
           <Sidebar />
 
           <Routes>
+          <Route path="/" element={<MyPage />}/>
             <Route path="/myPage" element={<MyPage />}/>
             <Route path="/trade" element={<Trade/>}/>
             <Route path="/borrow" element={<Borrow/>}/>
