@@ -1,10 +1,10 @@
 import React from 'react'
 import './Header.css';
 import { IconButton } from "@material-ui/core";
-import logo from "./ressources/logo.png";
+import logo from "../../ressources/logo.png";
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ConnectButton from "./ConnectButton.js";
+import ConnectButton from "../ConnectButton/ConnectButton.js";
 
 function Header() {
   return (

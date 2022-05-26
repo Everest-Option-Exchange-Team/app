@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Sidebar.css";
 import HomeIcon from '@mui/icons-material/Home';
-import SidebarOption from "./SidebarOption.js";
+import SidebarOption from "../SidebarOption/SidebarOption.js";
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
 import { IconButton } from "@material-ui/core";
@@ -22,8 +22,8 @@ function Sidebar() {
             <div onClick={() => navigate("/trade")}>
                 <SidebarOption Icon={CompareArrowsIcon} title="Trade" selected={true}/>
             </div>
-            <div>   
-                <SidebarOption Icon={CurrencyExchangeIcon} title="Borrow" handleNavigate={() => navigate("/borrow")}/>
+            <div onClick={() => navigate("/borrow")}>   
+                <SidebarOption Icon={CurrencyExchangeIcon} title="Borrow"/>
             </div>
             
         </div>

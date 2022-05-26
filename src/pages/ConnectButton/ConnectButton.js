@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from "@material-ui/core";
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import { useSelector } from "react-redux";
-import { login, selectAddress } from "./features/userSlice";
+import { login, selectAddress } from "../../features/userSlice";
 import { useDispatch } from "react-redux";
 
 function ConnectButton() {
