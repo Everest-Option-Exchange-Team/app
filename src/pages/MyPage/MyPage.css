@@ -2,4 +2,59 @@
     flex: 1;
     overflow: scroll;
     background-color: #1c1c1c;
+    padding-left: 200px;
+    padding-right: 800px;
+    padding-top: 70px;
+    color: white;
+    display: inline;
+    
+}
+
+.myPage__body {
+    background-color: #2d2d2e;
+    display: inline;
+    height: 50px;
+    padding: 10px 80px 100px 40px;
+    cursor: pointer;
+    color: #a4a4a4;
+    margin: 2px 0px 1px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+
+.myPage__body > h3 {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.myPage__body:hover {
+    background-color: #373738;
+}
+
+.myPage__headline {
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.myPage__number {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.myPage__value {
+    display: flex;
+}
+
+.myPage__usdc {
+    padding-top:4px;
+    padding-left:2px;
 }

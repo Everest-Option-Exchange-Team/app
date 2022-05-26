@@ -1,16 +1,19 @@
 import React from 'react'
 import "./MyPage.css";
-import { Checkbox } from "@material-ui/core";
 
 function MyPage() {
   return (
     <div className="myPage">
-        <div className="myPage__settings">
-            <div className="myPage__settingsLeft">
-                <Checkbox />
+      <h1 className="headline">My Page</h1>
+      <div className="myPage__body">
+        <p className="myPage__headline">Total Value:</p>
 
-            </div>
+        <div className="myPage__value">
+          <p className="myPage__number">1682.92</p>
+          <p className="myPage__usdc">USDC</p>
         </div>
+        
+      </div>
     </div>
   )
 }

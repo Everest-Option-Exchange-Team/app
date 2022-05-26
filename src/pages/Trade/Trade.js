@@ -7,7 +7,7 @@ import Swap from "./Swap.js";
 function Trade( {page}) {
   return (
     <div className="trade">
-      <h1>Trade</h1>
+      <h1 className="headline">Trade</h1>
       {page==="tradeList" && <TradeList />}
       {page==="swap" && <Swap />}
     
