@@ -1,0 +1,50 @@
+.tradeOption {
+    background-color: #2d2d2e;
+    display: flex;
+    height: 50px;
+    padding: 10px 80px 10px 40px;
+    cursor: pointer;
+    color: #a4a4a4;
+    margin: 2px 0px 1px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.tradeOption > h3 {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.tradeOption--active,
+.tradeOption--active > h3
+ {
+    background-color: #2d2d2e;
+    color: #56adff;
+    font-weight: 800 !important;
+}
+
+.tradeOption:hover {
+    background-color: #373738;
+}
+
+.tradeOption__logo {
+    margin: 100 100 100 100px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tradeOption__nameANDtickerSymbol {
+    margin: 10px 10px 10px 10px ;
+}
+
+.tradeOption__tickerSymbol {
+    color: white;
+}
