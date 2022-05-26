@@ -8,29 +8,3 @@
     color: white;
 }
 
-.trade__search {
-    display: flex;
-    flex: 0.7;
-    align-items: center;
-    background: #242424;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.trade__search > .MuiSvgIcon-root {
-    color: #66adff;
-}
-
-.trade__search > input {
-    border: none !important;
-    width: 100%;
-    padding: 10px;
-    outline-width: 0 !important ;
-    font-size: medium;
-    background: transparent;
-}
-
-.trade__tradeOptions {
-    margin-top: 20px;
-}

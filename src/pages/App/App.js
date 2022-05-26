@@ -23,7 +23,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Trade />}/>
             <Route path="/myPage" element={<MyPage />}/>
-            <Route path="/trade" element={<Trade/>}/>
+            <Route path="/trade" element={<Trade page="swap"/>}/>
             <Route path="/borrow" element={<Borrow/>}/>
           </Routes>
         </div>

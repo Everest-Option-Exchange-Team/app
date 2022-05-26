@@ -32,19 +32,3 @@
 .tradeOption:hover {
     background-color: #373738;
 }
-
-.tradeOption__logo {
-    margin: 100 100 100 100px;
-   
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.tradeOption__nameANDtickerSymbol {
-    margin: 10px 10px 10px 10px ;
-}
-
-.tradeOption__tickerSymbol {
-    color: white;
-}
