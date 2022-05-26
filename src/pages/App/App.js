@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Header from './pages/Header/Header.js';
-import Sidebar from './pages/Sidebar/Sidebar.js';
-import MyPage from './pages/MyPage/MyPage.js';
-import Trade from './pages/Trade/Trade';
-import Borrow from './pages/Borrow/Borrow';
+import Header from '../Header/Header.js';
+import Sidebar from '../Sidebar/Sidebar.js';
+import MyPage from '../MyPage/MyPage.js';
+import Trade from '../Trade/Trade.js';
+import Borrow from '../Borrow/Borrow';
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,7 +21,7 @@ function App() {
           <Sidebar />
 
           <Routes>
-          <Route path="/" element={<MyPage />}/>
+          <Route path="/" element={<Trade />}/>
             <Route path="/myPage" element={<MyPage />}/>
             <Route path="/trade" element={<Trade/>}/>
             <Route path="/borrow" element={<Borrow/>}/>
