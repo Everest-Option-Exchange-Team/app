@@ -2,7 +2,7 @@ import React from 'react'
 import USDC from "./../../ressources/USDC.png";
 import Stock from "../Trade/Stock";
 import "./Mint.css";
-import Slider from '@mui/material/Slider';
+import Slider from '@material-ui/core/Slider';
 import { Button } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import TSLA from "./../../ressources/TSLA.png";
