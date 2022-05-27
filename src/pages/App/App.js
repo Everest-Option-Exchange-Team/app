@@ -6,7 +6,7 @@ import MyPage from '../MyPage/MyPage.js';
 import Trade from '../Trade/Trade.js';
 import Borrow from '../Borrow/Borrow';
 import TradeSwap from "../Trade/TradeSwap";
-import Mint from "../Borrow/Mint";
+import BorrowMint from "../Borrow/BorrowMint";
 import TSLA from "./../../ressources/TSLA.png";
 import MSFT from "./../../ressources/MSFT.png";
 import AAPL from "./../../ressources/AAPL.png";
@@ -38,11 +38,11 @@ function App() {
             <Route path="trade/GOOG" element={<TradeSwap tickerSymbol="GOOG" assetLogo={GOOG}/>} />
             <Route path="trade/ABNB" element={<TradeSwap tickerSymbol="ABNB" assetLogo={ABNB}/>} />
 
-            <Route path="borrow/TSLA" element={<Mint tickerSymbol="TSLA" assetLogo={TSLA}/>} />
-            <Route path="borrow/MSFT" element={<Mint tickerSymbol="MSFT" assetLogo={MSFT}/>} />
-            <Route path="borrow/AAPL" element={<Mint tickerSymbol="AAPL" assetLogo={AAPL}/>} />
-            <Route path="borrow/GOOG" element={<Mint tickerSymbol="GOOG" assetLogo={GOOG}/>} />
-            <Route path="borrow/ABNB" element={<Mint tickerSymbol="ABNB" assetLogo={ABNB}/>} />
+            <Route path="borrow/TSLA" element={<BorrowMint tickerSymbol="TSLA" assetLogo={TSLA}/>} />
+            <Route path="borrow/MSFT" element={<BorrowMint tickerSymbol="MSFT" assetLogo={MSFT}/>} />
+            <Route path="borrow/AAPL" element={<BorrowMint tickerSymbol="AAPL" assetLogo={AAPL}/>} />
+            <Route path="borrow/GOOG" element={<BorrowMint tickerSymbol="GOOG" assetLogo={GOOG}/>} />
+            <Route path="borrow/ABNB" element={<BorrowMint tickerSymbol="ABNB" assetLogo={ABNB}/>} />
 
             <Route path="/borrow" element={<Borrow/>}/>
           </Routes>
