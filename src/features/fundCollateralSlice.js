@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import abi from './../abis/Fund.json';
+import abi from './../artifacts/contracts/Fund.sol/Fund.json';
 
 const initialState = {
   address: "0xdE4E6EFcaaEaa997A77b812eCE98739948391c51", 
