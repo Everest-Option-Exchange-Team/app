@@ -132,14 +132,14 @@ function MyPage() {
             Deposit
           </Button>
           <Button 
-          className="myPage__button2">
+          className="myPage__button2"
             onClick={
               () => {
                 withdraw();
                 setAmountWithdraw(0);
                 setLoadingWithdraw(true);
               }
-            }
+            }>
             Withdraw
             </Button>
         </div>
