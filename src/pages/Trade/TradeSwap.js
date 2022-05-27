@@ -6,15 +6,15 @@ import Uniswap from "./Uniswap.js";
 
 
 
-function Trade() {
+function TradeSwap( {tickerSymbol} ) {
   return (
     
       <div className="trade">
       <h1 className="headline">Trade</h1>
-      <TradeList />
+      <Swap tickerSymbol={tickerSymbol}/>
     </div>
   
   )
 }
 
-export default Trade
+export default TradeSwap

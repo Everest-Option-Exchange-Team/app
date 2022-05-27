@@ -1,40 +1,74 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tsla: 100,
-  msft: 100,
-  aapl: 100,
-  goog: 100,
-  abnb: 100
+  tsla_pool: 120,
+  msft_pool: 120,
+  aapl_pool: 120,
+  goog_pool: 120,
+  abnb_pool: 120,
+
+  tsla_oracle: 100,
+  msft_oracle: 100,
+  aapl_oracle: 100,
+  goog_oracle: 100,
+  abnb_oracle: 100
 };
 
 
-export const userSlice = createSlice({
+export const pricesSlice = createSlice({
   name: "prices",
   initialState,
   reducers: {
-    setTSLAPrice: (state, action) => {
-      state.tsla = action.payload;
+    setTSLA_oraclePrice: (state, action) => {
+      state.tsla_oracle = action.payload;
     },
-    setMSFTPrice: (state, action) => {
-        state.msft = action.payload;
+    setMSFT_oraclePrice: (state, action) => {
+        state.msft_oracle = action.payload;
     },
-    setAAPLPrice: (state, action) => {
-        state.aapl = action.payload;
+    setAAPL_oraclePrice: (state, action) => {
+        state.aapl_oracle = action.payload;
     },
-    setGOOGPrice: (state, action) => {
-        state.goog = action.payload;
+    setGOOG_oraclePrice: (state, action) => {
+        state.goog_oracle = action.payload;
     },
-    setABNBPrice: (state, action) => {
-        state.abnb = action.payload;
+    setABNB_oraclePrice: (state, action) => {
+        state.abnb_oracle = action.payload;
+    },
+    setTSLA_poolPrice: (state, action) => {
+        state.tsla_pool = action.payload;
+    },
+    setMSFT_poolPrice: (state, action) => {
+        state.msft_pool = action.payload;
+    },
+    setAAPL_poolPrice: (state, action) => {
+      state.aapl_pool = action.payload;
+    },
+    setGOOG_poolPrice: (state, action) => {
+        state.goog_pool = action.payload;
+    },
+    setABNB_poolPrice: (state, action) => {
+        state.abnb_pool = action.payload;
     },
     
     
   },
 });
 
-export const { setTSLAPrice, setMSFTPrice, setAAPLPrice, setGOOGPrice, setABNBPrice } = userSlice.actions;
+export const { 
+    setTSLA_poolPrice, 
+    setMSFT_poolPrice, 
+    setAAPL_poolPrice, 
+    setGOOG_poolPrice, 
+    setABNB_poolPrice,
+
+    setTSLA_oraclePrice, 
+    setMSFT_oraclePrice, 
+    setAAPL_oraclePrice, 
+    setGOOG_oraclePrice, 
+    setABNB_oraclePrice,
+
+} = pricesSlice.actions;
 
 export const selectAddress = (state) => state.address;
 
-export default userSlice.reducer;
+export default pricesSlice.reducer;

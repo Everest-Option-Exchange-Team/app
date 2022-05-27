@@ -15,7 +15,7 @@ const initialState = {
 };
 
 
-export const userSlice = createSlice({
+export const fundCollateralSlice = createSlice({
   name: "fundCollateral",
   initialState,
   reducers: {
@@ -60,8 +60,8 @@ export const {
     setLoadingDeposit,
     setLoadingWithdraw
 
-} = userSlice.actions;
+} = fundCollateralSlice.actions;
 
 export const selectAddress = (state) => state.address;
 
-export default userSlice.reducer;
+export default fundCollateralSlice.reducer;

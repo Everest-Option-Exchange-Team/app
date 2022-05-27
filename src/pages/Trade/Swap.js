@@ -1,11 +1,11 @@
 import React from 'react'
 import "./Swap.css";
 import USDC from "./../../ressources/USDC.png";
-import TSLA from "./../../ressources/TSLA.png";
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Stock from "./Stock.js";
 
-function Swap() {
+function Swap( {tickerSymbol, assetLogo} ) {
+    console.log("assetLogo: " + assetLogo);
   return (
     <div className="swap">
         <div className="swap__header">
@@ -46,10 +46,10 @@ function Swap() {
                         <div className="swap__asset">
                             
                             <p className="swap__buyLabel">BUY</p>
-                            <img src={TSLA} alt="" className="swap__assetLogo" width="30"></img>
+                            <img src={assetLogo} alt="" className="swap__assetLogo" width="30"></img>
                             
                         </div>
-                        <p className="swap__assetLabel">TSLA</p>
+                        <p className="swap__assetLabel">{tickerSymbol}</p>
                         
                         <input type="text" />
                     </div>
@@ -60,7 +60,7 @@ function Swap() {
             
             <div className="swap__bodyRight">
                 <div className="swap__assetInfo">
-                    <Stock logo={TSLA} tickerSymbol="TSLA" name="Tesla"/>
+                    <Stock logo={assetLogo} tickerSymbol={tickerSymbol} name="Tesla"/>
 
 
                     <div className="swap__infoLabelBody">
