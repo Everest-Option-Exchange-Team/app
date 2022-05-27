@@ -5,12 +5,14 @@ import { ethers, BigNumber } from "ethers";
 import "./MyPage.css";
 import { 
   setAddress, 
-  setShowEventSnackbar, 
-  setTypeOfEvent, 
-  setAmountDeposit, 
-  setTransactionHash,
-  setTransactionBlockNumber,
-  setLoadingDeposit
+    setShowEventSnackbar, 
+    setTypeOfEvent, 
+    setAmountDeposit,
+    setAmountWithdraw,
+    setTransactionHash,
+    setTransactionBlockNumber,
+    setLoadingDeposit,
+    setLoadingWithdraw
 } from "../../features/fundCollateralSlice";
 
 function MyPage() {
@@ -18,9 +20,11 @@ function MyPage() {
   const fundCollateral = useSelector(state => state.fundCollateral);
 
   const deposit = async () => {
+    console.log("Deposit initialied...");
     try {
       const { ethereum } = window;
       if (ethereum) {
+        console.log("Ethereum object found!...");
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const fundContract = new ethers.Contract(fundCollateral.address, fundCollateral.abi, signer);
@@ -54,6 +58,47 @@ function MyPage() {
               setShowEventSnackbar(true);
               setShowEventSnackbar(false);
           });
+          console.log("Finshed!...");
+      } else {
+        console.log("Ethereum object doesn't exist");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const withdraw = async () => {
+    try {
+      const { ethereum } = window;
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const fundContract = new ethers.Contract(fundCollateral.address, fundCollateral.abi, signer);
+
+        fundContract
+          .withdraw(ethers.utils.parseEther(fundCollateral.amountWithdraw.toString()))
+            .then((tx)=>{
+              //action prior to transaction being mined
+              setTypeOfEvent("sent");
+              setShowEventSnackbar(true);
+              setShowEventSnackbar(false);
+              provider.waitForTransaction(tx.hash)
+                .then((transactionReceipt)=>{
+                  //action after transaction is mined
+                  setTypeOfEvent("mined");
+                  setTransactionHash(transactionReceipt.transactionHash);
+                  setTransactionBlockNumber(transactionReceipt.blockNumber);
+                  setShowEventSnackbar(true);
+                  setShowEventSnackbar(false);
+              })
+       })
+       .catch(()=>{
+       //action to perform when user clicks "reject"
+          setTypeOfEvent("failure");
+          setLoadingWithdraw(false);
+          setShowEventSnackbar(true);
+          setShowEventSnackbar(false);
+       });
       } else {
         console.log("Ethereum object doesn't exist");
       }
@@ -77,14 +122,26 @@ function MyPage() {
         </div>
 
         <div className="myPage__buttons">
-          <Button variant="primary" size="lg" className="myPage__button1" onClick={
+          <Button className="myPage__button1" onClick={
             () => {
               deposit();
               setAmountDeposit(0);
               setLoadingDeposit(true);
             }
-          }>Deposit</Button>
-          <Button variant="primary" size="lg" className="myPage__button2">Withdraw</Button>
+          }>
+            Deposit
+          </Button>
+          <Button 
+          className="myPage__button2">
+            onClick={
+              () => {
+                withdraw();
+                setAmountWithdraw(0);
+                setLoadingWithdraw(true);
+              }
+            }
+            Withdraw
+            </Button>
         </div>
         
       </div>

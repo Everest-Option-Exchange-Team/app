@@ -7,9 +7,11 @@ const initialState = {
   showEventSnackbar: false,
   typeOfEvent: "",
   amountDeposit: 0,
+  amountWithdraw: 0,
   transactionHash: "",
   transactionBlockNumber:"",
-  loadingDeposit: false
+  loadingDeposit: false,
+  loadingWithdraw: false
 };
 
 
@@ -29,6 +31,9 @@ export const userSlice = createSlice({
     setAmountDeposit: (state, action) => {
         state.amountDeposit = action.payload;
     },
+    setAmountWithdraw: (state, action) => {
+        state.amountWithdraw = action.payload;
+    },
     setTransactionHash: (state, action) => {
         state.transactionHash = action.payload;
     },
@@ -37,6 +42,9 @@ export const userSlice = createSlice({
     },
     setLoadingDeposit: (state, action) => {
         state.loadingDeposit = action.payload;
+    },
+    setLoadingWithdraw: (state, action) => {
+        state.loadingWithdraw = action.payload;
     }
   },
 });
@@ -45,10 +53,12 @@ export const {
     setAddress, 
     setShowEventSnackbar, 
     setTypeOfEvent, 
-    setAmountDeposit, 
+    setAmountDeposit,
+    setAmountWithdraw,
     setTransactionHash,
     setTransactionBlockNumber,
-    setLoadingDeposit
+    setLoadingDeposit,
+    setLoadingWithdraw
 
 } = userSlice.actions;
 
