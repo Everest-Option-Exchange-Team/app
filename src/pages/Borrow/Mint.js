@@ -1,12 +1,70 @@
 import React from 'react'
 import USDC from "./../../ressources/USDC.png";
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Stock from "../Trade/Stock";
 import "./Mint.css";
 import Slider from '@mui/material/Slider';
 import { Button } from "@material-ui/core";
+import { useSelector } from "react-redux";
+import TSLA from "./../../ressources/TSLA.png";
+import MSFT from "./../../ressources/MSFT.png";
+import AAPL from "./../../ressources/AAPL.png";
+import GOOG from "./../../ressources/GOOG.png";
+import ABNB from "./../../ressources/ABNB.png";
 
 function Mint( {tickerSymbol, assetLogo}) {
+
+    const prices = useSelector(state => state.prices);
+
+    const getOraclePrice = (tickerSymbol) => {
+        switch(tickerSymbol) {
+            case "TSLA":
+                return prices.tsla_oracle;
+            case "MSFT":
+                return prices.msft_oracle;
+            case "AAPL":
+                return prices.aapl_oracle;
+            case "GOOG":
+                return prices.goog_oracle;
+            case "ABNB":
+                return prices.abnb_oracle;
+            default:
+                return undefined;
+        }
+    }
+
+    const getPoolPrice = (tickerSymbol) => {
+        switch(tickerSymbol) {
+            case "TSLA":
+                return prices.tsla_pool;
+            case "MSFT":
+                return prices.msft_pool;
+            case "AAPL":
+                return prices.aapl_pool;
+            case "GOOG":
+                return prices.goog_pool;
+            case "ABNB":
+                return prices.abnb_pool;
+            default:
+                return undefined;
+        }
+    }
+
+    const getAssetLogo = (tickerSymbol) => {
+        switch(tickerSymbol) {
+            case "TSLA":
+                return TSLA;
+            case "MSFT":
+                return MSFT;
+            case "AAPL":
+                return AAPL;
+            case "GOOG":
+                return GOOG;
+            case "ABNB":
+                return ABNB;
+            default:
+                return undefined;
+        }
+    }
 
     const valuetext = (value) => {
         return `${value}°C`;
@@ -78,7 +136,7 @@ function Mint( {tickerSymbol, assetLogo}) {
                         <div className="swap__asset">
                             
                             <p className="swap__buyLabel">BORROW</p>
-                            <img src={assetLogo} alt="" className="swap__assetLogo" width="30"></img>
+                            <img src={getAssetLogo(tickerSymbol)} alt="" className="swap__assetLogo" width="30"></img>
                             
                         </div>
                         <p className="swap__assetLabel">{tickerSymbol}</p>
@@ -96,7 +154,7 @@ function Mint( {tickerSymbol, assetLogo}) {
             
             <div className="swap__bodyRight">
                 <div className="swap__assetInfo">
-                    <Stock logo={assetLogo} tickerSymbol={tickerSymbol} name="Tesla"/>
+                    <Stock logo={getAssetLogo(tickerSymbol)} tickerSymbol={tickerSymbol} name="Tesla"/>
 
 
                     <div className="swap__infoLabelBody">
@@ -107,8 +165,8 @@ function Mint( {tickerSymbol, assetLogo}) {
                         </div>
 
                         <div className="swap__inforLabelRight">
-                            <p className="swap__infoLabel">1000 USDC</p>
-                            <p className="swap__infoLabel">1200 USDC</p>
+                            <p className="swap__infoLabel">{getOraclePrice(tickerSymbol)} USDC</p>
+                            <p className="swap__infoLabel">{getPoolPrice(tickerSymbol)} USDC</p>
                             <p className="swap__infoLabel">0 USDC</p>
                         </div>
                     </div>

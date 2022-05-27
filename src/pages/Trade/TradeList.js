@@ -3,8 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import TradeOption from "./TradeOption.js";
 import "./TradeList.css";
-import { useSelector, useDispatch } from "react-redux";
-import { setCurrentPage } from "../../features/pageSlice";
+import { useSelector } from "react-redux";
 
 import TSLA from "../../ressources/TSLA.png";
 import ABNB from "../../ressources/ABNB.png";
@@ -14,8 +13,6 @@ import GOOG from "../../ressources/GOOG.png";
 
 function TradeList() {
   const prices = useSelector(state => state.prices);
-  const page = useSelector(state => state.page);
-  const dispatch = useDispatch();
   return (
     <div>
         <div className="tradeList__search">
