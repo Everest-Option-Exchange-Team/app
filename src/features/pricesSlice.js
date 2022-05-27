@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tsla_pool: 120,
-  msft_pool: 121,
-  aapl_pool: 122,
-  goog_pool: 123,
-  abnb_pool: 124,
+  tsla_pool: 757.34,
+  msft_pool: 271.94,
+  aapl_pool: 149.02,
+  goog_pool: 2245.79,
+  abnb_pool: 120.10,
 
-  tsla_oracle: 100,
-  msft_oracle: 101,
-  aapl_oracle: 102,
-  goog_oracle: 103,
-  abnb_oracle: 104
+  tsla_oracle: 757.73,
+  msft_oracle: 271.82,
+  aapl_oracle: 149.21,
+  goog_oracle: 2245.97,
+  abnb_oracle: 119.97
 };
 
 

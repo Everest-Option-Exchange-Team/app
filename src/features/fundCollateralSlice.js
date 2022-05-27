@@ -1,17 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 import abi from './../artifacts/contracts/Fund.sol/Fund.json';
+import { BigNumber } from "ethers";
 
 const initialState = {
   address: "0xdE4E6EFcaaEaa997A77b812eCE98739948391c51", 
-  abi: abi,
+  abi: abi.abi,
   showEventSnackbar: false,
   typeOfEvent: "",
-  amountDeposit: 0,
+  amountDeposit: 1,
   amountWithdraw: 0,
   transactionHash: "",
   transactionBlockNumber:"",
   loadingDeposit: false,
-  loadingWithdraw: false
+  loadingWithdraw: false,
+  amountFunded: BigNumber.from('0'),
+  totalAmountFunded: BigNumber.from('0')
 };
 
 
@@ -45,6 +48,12 @@ export const fundCollateralSlice = createSlice({
     },
     setLoadingWithdraw: (state, action) => {
         state.loadingWithdraw = action.payload;
+    },
+    setAmountFunded: (state, action) => {
+        state.amountFunded = action.payload;
+    },
+    setTotalAmountFunded: (state, action) => {
+        state.totalAmountFunded = action.payload;
     }
   },
 });
@@ -58,7 +67,9 @@ export const {
     setTransactionHash,
     setTransactionBlockNumber,
     setLoadingDeposit,
-    setLoadingWithdraw
+    setLoadingWithdraw,
+    setAmountFunded,
+    setTotalAmountFunded
 
 } = fundCollateralSlice.actions;
 
